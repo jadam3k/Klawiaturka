@@ -1,23 +1,44 @@
-import board
 from kmk.kmk_keyboard import KMKKeyboard
-from kmk.scanners.keypad import KeysScanner
 from kmk.keys import KC
-from kmk.modules.macros import Press, Release, Tap, Macros
+from kmk.scanners import DiodeOrientation, MatrixScanner
+from kmk.modules.rotary import RotaryEncoderModule
+from kmk.extensions.media_keys import MediaKeys
+
+import board
+from kmk.modules.rotary import RotaryEncoder
 
 keyboard = KMKKeyboard()
-macros = Macros()
-keyboard.modules.append(macros)
 
-PINS = [board.D3, board.D4, board.D2, board.D1]
 
-keyboard.matrix = KeysScanner(pins=PINS, value_when_pressed=False)
+cols = [board.D4, board.D5, board.D6]
+rows = [board.D11, board.D12, board.D13]
+
+scanner = MatrixScanner(
+    row_pins=rows,
+    col_pins=cols,
+    diode_orientation=DiodeOrientation.COL2ROW
+)
+keyboard.modules.append(scanner)
+
+
+keyboard.extensions.append(MediaKeys())
+
+
+encoder = RotaryEncoder(
+    pins=(board.D3, board.D2),
+    clockwise=MediaKeys.volume_up,
+    counter_clockwise=MediaKeys.volume_down,
+    button=board.D1,
+    button_key=KC.ENTER 
+)
+keyboard.modules.append(encoder)
+
 
 keyboard.keymap = [
     [
-        KC.Macro(Press(KC.LCTRL), Tap(KC.A), Release(KC.LCTRL)),
-        KC.Macro(Press(KC.LCTRL), Tap(KC.C), Release(KC.LCTRL)),
-        KC.Macro(Press(KC.LCTRL), Tap(KC.V), Release(KC.LCTRL)),
-        KC.Macro(Press(KC.LCTRL), Tap(KC.X), Release(KC.LCTRL)),
+        [KC.A, KC.B, KC.C],    # ROW1
+        [KC.D, KC.E, KC.F],    # ROW2
+        [KC.G, KC.H, KC.I],    # ROW3
     ]
 ]
 

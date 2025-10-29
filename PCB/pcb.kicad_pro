@@ -487,10 +487,10 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "../PRODUCTION/",
+      "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "../../../Downloads/pcb.step",
+      "step": "../../../Downloads/pceb.step",
       "svg": "",
       "vrml": ""
     },

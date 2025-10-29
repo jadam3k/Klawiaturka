@@ -44,21 +44,14 @@
 
 # \- Seeed XIAO RP2040 x1<br>
 
-# \- Cherry MX switches x4<br>
+# \- Cherry MX switches x9<br>
 
 # \- PCB x1<br>
 
-# \- SK6812 MINI-E LEDs x2<br>
+# \- 20MM Half handle EC11 Encoder x1<br>
 
 # \- Blank DSA keycaps x4<br>
 
 # \- M4x16mm screws x4<br>
 
-# 
-
-# 
-
-# 
-
-# 
 
