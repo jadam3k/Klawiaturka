@@ -1,3 +1,6 @@
+# Info
+I wanted to test my electronics skills, so I made a 3x3 keyboard with a "potentiometer" that controls the volume. I'm currently studying automation engineering, so the basics weren't a problem. I consider the project a success. Unfortunately, I received information that I had to rework the design, but this didn't derail my plans, and I managed to complete the project.
+
 ## Screenshots
 
 
